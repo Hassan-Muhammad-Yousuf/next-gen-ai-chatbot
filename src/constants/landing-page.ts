@@ -27,4 +27,4 @@ export const pricingCards = [
       features: [' 2 domain ', '50 contacts', '50 Emails per month'],
       priceId: 'price_1OYxkqFj9oKEERu1NbKUxXxN',
     },
-  ]
+]

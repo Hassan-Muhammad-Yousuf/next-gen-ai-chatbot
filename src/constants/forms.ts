@@ -61,4 +61,4 @@ type UserRegistrationProps = {
       name: 'password',
       type: 'password',
     },
-  ]
+]
