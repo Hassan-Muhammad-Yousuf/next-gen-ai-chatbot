@@ -5,7 +5,6 @@ import { AddDomainSchema } from '@/schemas/settings.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { UploadClient } from '@uploadcare/upload-client'
 import { usePathname, useRouter } from 'next/navigation'
-
 import { useEffect, useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 
