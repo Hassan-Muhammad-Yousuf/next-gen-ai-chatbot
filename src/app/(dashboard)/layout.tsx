@@ -13,6 +13,9 @@ const OwnerLayout = async ({children}: Props) => {
         <ChatProvider>
             <div className="flex h-screen w-full">
                 <SideBar domains={authenticated.domain}/>
+                <div className="w-full h-screen flex flex-col py-3 pr-10 pl-20">
+                    {children}
+                </div>
             </div>
         </ChatProvider>
     )
