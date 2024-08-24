@@ -2,8 +2,9 @@ import { onGetSubscriptionPlan } from '@/actions/settings'
 import React from 'react'
 import Section from '../section-label'
 import { Card, CardContent, CardDescription } from '../ui/card'
-import { Plus } from 'lucide-react'
+import { CheckCircle2, Plus } from 'lucide-react'
 import { pricingCards } from '@/constants/landing-page'
+
 
 type Props = {}
 
@@ -38,6 +39,14 @@ const BillingSettings = async (props: Props) => {
       <div className="lg:col-span-2">
         <h3 className="text-xl font-semibold mb-2">Current Plan</h3>
         <p className="text-sm font-semibold">{plan}</p>
+        <div className='flex gap-[5px] flex-col'>
+          {planFeatures.map((feature) => (
+            <div key={feature} className='flex gap-2'>
+              <CheckCircle2 className='text-muted-foreground'/>
+              <p className='text-muted-foreground'>{feature}</p>
+            </div>
+          ))}
+        </div>
         {/* <p className='text-sm font-light'>
             {plan == 'PRO'
             ? 'Start Growing Your Business Today'

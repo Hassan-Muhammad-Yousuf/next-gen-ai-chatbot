@@ -108,50 +108,95 @@ export const onGetSubscriptionPlan = async () => {
 }
 
 export const onGetAllAccountDomains = async () => {
-    const user = await currentUser()
-    if (!user) return
-    try {
-      const domains = await client.user.findUnique({
-        where: {
-          clerkId: user.id,
-        },
-        select: {
-          id: true,
-          domains: {
-            select: {
-              name: true,
-              icon: true,
-              id: true,
-              customer: {
-                select: {
-                  chatRoom: {
-                    select: {
-                      id: true,
-                      live: true,
-                    },
+  const user = await currentUser()
+  if (!user) return
+  try {
+    const domains = await client.user.findUnique({
+      where: {
+        clerkId: user.id,
+      },
+      select: {
+        id: true,
+        domains: {
+          select: {
+            name: true,
+            icon: true,
+            id: true,
+            customer: {
+              select: {
+                chatRoom: {
+                  select: {
+                    id: true,
+                    live: true,
                   },
                 },
               },
             },
           },
         },
-      })
-      return { ...domains }
-    } catch (error) {
-      console.log(error)
-    }
+      },
+    })
+    return { ...domains }
+  } catch (error) {
+    console.log(error)
   }
+}
 
-  export const onUpdatePassword = async (password: string) => {
-    try {
-      const user = await currentUser()
-  
-      if (!user) return null
-      const update = await clerkClient.users.updateUser(user.id, { password })
-      if (update) {
-        return { status: 200, message: 'Password updated' }
-      }
-    } catch (error) {
-      console.log(error)
+export const onUpdatePassword = async (password: string) => {
+  try {
+    const user = await currentUser()
+
+    if (!user) return null
+    const update = await clerkClient.users.updateUser(user.id, { password })
+    if (update) {
+      return { status: 200, message: 'Password updated' }
     }
+  } catch (error) {
+    console.log(error)
   }
+}
+
+export const onGetCurrentDomainInfo = async (domain: string) => {
+  const user = await currentUser()
+  if (!user) return
+  try {
+    const userDomain = await client.user.findUnique({
+      where: {
+        clerkId: user.id,
+      },
+      select: {
+        subscription: {
+          select: {
+            plan: true,
+          },
+        },
+        domains: {
+          where: {
+            name: {
+              contains: domain,
+            },
+          },
+          select: {
+            id: true,
+            name: true,
+            icon: true,
+            userId: true,
+            products: true,
+            chatBot: {
+              select: {
+                id: true,
+                welcomeMessage: true,
+                icon: true,
+              },
+            },
+          },
+        },
+      },
+    })
+    if (userDomain) {
+      return userDomain
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
