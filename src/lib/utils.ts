@@ -38,6 +38,10 @@ export const extractEmailsFromString = (text: string) => {
   return text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
 }
 
+export const extractURLfromString = (url: string) => {
+  return url.match(/https?:\/\/[^\s"<>]+/)
+}
+
 
 export const getMonthName = (month: number) => {
   return month == 1
