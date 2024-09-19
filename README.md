@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Next-Gen AI 
+
+Greetings from the **Next-Gen AI** initiative! Through tailored interactions, this online application uses state-of-the-art AI technologies to improve client engagement. Our chatbot is designed for use by companies in the retail, healthcare, and customer support sectors. It does appointment scheduling, secure payment processing, and customer service job automation.
+
+## Features
+
+- **AI-Powered Chatbot**: Provides intelligent responses to customer queries.
+- **Appointment Scheduling**: Easily book appointments.
+- **Payment Processing**: Secure Stripe integration for transactions.
+- **Live Chat Options**: Switch between automated responses and live agent support.
+- **User-Friendly Interface**: Intuitive design for seamless interaction.
+- **File Uploads**: Integrated with Uploadcare for secure file handling.
+- **Authentication**: Uses Clerk for user management and authentication.
+- **Real-Time Communication**: Powered by Pusher for instant updates.
+- **Analytics Dashboard**: Insights into customer interactions and financial performance.
+
+## Technologies Used
+
+- **Frontend**: React
+- **Backend**: Node.js, Next.js
+- **Database**: PostgreSQL with Prisma ORM
+- **APIs**: OpenAI for NLP, Stripe for payments, Uploadcare for file uploads, Clerk for authentication, Pusher for real-time communication
+- **Deployment**: Cloudways for hosting
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/next-gen-ai-chatbot.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd next-gen-ai-chatbot
+   ```
+3. **Install Dependencies**:
+   ```bash
+   bun install
+   ```
+4. **Start the Development Server**:
+   ```bash
+   bun run dev
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Contributing
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+We welcome contributions! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## License
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
