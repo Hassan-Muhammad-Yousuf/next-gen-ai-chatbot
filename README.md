@@ -27,7 +27,7 @@ Greetings from the **Next-Gen AI** initiative! Through tailored interactions, th
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/next-gen-ai-chatbot.git
+   git clone https://github.com/Hassan-Muhammad-Yousuf/next-gen-ai-chatbot.git
    ```
 2. **Navigate to the Project Directory**:
    ```bash
